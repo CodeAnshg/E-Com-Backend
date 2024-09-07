@@ -5,6 +5,7 @@ const bodyParser=require('body-parser')
 const mongoose= require('mongoose')
 const detailRoutes= require('./routes/companyDetailRoute')
 const userRoutes=require('./routes/usersRoutes')
+const productRotes=require('./routes/productRoute')
 
 const cors=require("cors")
 app.use(cors());
@@ -24,6 +25,7 @@ mongoose.connect("mongodb+srv://guptaansh912:guptaansh912@cluster0.kc57p0u.mongo
 
 app.use("/" , detailRoutes )
 app.use("/",userRoutes)
+app.use("/",productRotes)
 
 
 app.listen(3000,()=>{
