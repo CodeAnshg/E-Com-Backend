@@ -3,10 +3,7 @@
 // const app = express()  //function
 // const bodyParser=require('body-parser')
 // const mongoose= require('mongoose')
-const detailRoutes= require('./routes/companyDetailRoute')
 
-const userRoutes=require('./routes/usersRoutes')
-const productRoutes=require('./routes/productRoute')
 
 // const userRoutes=require('./routes/usersRoutes')
 
@@ -30,7 +27,7 @@ const productRoutes=require('./routes/productRoute')
 
 
 
-// app.use("/",userRoutes)
+
 
 
 // app.listen(3000,()=>{
@@ -45,7 +42,11 @@ const cors = require("cors");
 require("dotenv").config();
 require("./models/db"); // Ensure your MongoDB connection is properly set up
 const AuthRouter = require("./routes/AuthRouter");
+const categoryRoutes=require("./routes/categoryRoutes")
+const detailRoutes= require('./routes/companyDetailRoute')
 
+const userRoutes=require('./routes/usersRoutes')
+const productRoutes=require('./routes/productRoute')
 
 
 const PORT = process.env.PORT || 3000;
@@ -58,10 +59,13 @@ app.get("/ping", (req, res) => {
 app.use(bodyParser.json()); // Corrected: bodyParser.json() is a function
 app.use(cors());
 
+app.use("/",userRoutes)
+
 // Use auth routes
 app.use("/auth", AuthRouter); // Make sure authRoutes is properly imported
-app.use("/products", ProductRoutes); // Make sure authRoutes is properly imported
+app.use("/", productRoutes); // Make sure authRoutes is properly imported
 app.use("/", detailRoutes);
+app.use("/" , categoryRoutes);
 
 app.listen(PORT, () => {
   console.log(`server is running on ${PORT}`);
