@@ -19,7 +19,7 @@ const EnsureAuthenticated = (req, res, next) => {
     next();
   } catch (err) {
     return res
-      .status(401) // Changed from .state to .status
+      .status(401) 
       .json({ message: "Unauthorized, JWT token wrong or expired" });
   }
 };
