@@ -1,6 +1,5 @@
 const Category = require('../models/categorySchema');
 
-
 exports.getAllCategories = async (req, res) => {
   try {
     const categories = await Category.find();
