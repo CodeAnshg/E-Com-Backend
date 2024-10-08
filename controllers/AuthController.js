@@ -13,7 +13,6 @@ const signup = async (req, res) => {
       });
     }
 
-
     const userModel = new UserModel({
       name,
       email,
