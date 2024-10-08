@@ -3,9 +3,9 @@ const {
   signupValidation,
   loginValidation,
 } = require("../middlewares/AuthValidation");
-const router = require("express").Router(); // Yahaan () add karna zaruri hai
+const router = require("express").Router(); 
 
-router.post("/login", loginValidation, login); // Ensure login function is defined
+router.post("/login", loginValidation, login); 
 router.post("/signup", signupValidation, signup);
 
 module.exports = router;
