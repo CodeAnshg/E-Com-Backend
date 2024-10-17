@@ -18,10 +18,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/auth", AuthRouter);
-app.use("/products", productRoutes);
-app.use("/details", detailRoutes);
-app.use("/categories", categoryRoutes);
-app.use("/api/products", productRoutes);
+app.use("/", productRoutes);
+app.use("/", detailRoutes);
+app.use("/", categoryRoutes);
+app.use("/", productRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
