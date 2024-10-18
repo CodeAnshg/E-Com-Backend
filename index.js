@@ -12,7 +12,7 @@ const productRoutes = require("./routes/productRoute");
 const searchController = require("./routes/searchRoute");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
 app.use(cors());
